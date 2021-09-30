@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# USAGE
+#
+#   bootstrap
+#
+# DESCRIPTION
+#
+#   Bootstrap an Apache Kafka cluster on Kubernetes with Strimzi.
+
+# Start a local Kubernetes cluster
+minikube start --memory=4096 --cpus=2 --kubernetes-version=v1.22.2 --vm-driver=docker --profile kafka
+
+# Set context
+kubectl config use-context kafka
+
+# Create 'kafka' namespace
+kubectl create namespace kafka
+
+# Install Strimzi Operators
+kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka
+
+# Provision the Apache Kafka cluster
+kubectl apply -f https://strimzi.io/examples/latest/kafka/kafka-persistent-single.yaml -n kafka
+
+# Wait for 'Ready' condition on resources
+kubectl wait kafka/my-cluster --for=condition=Ready --timeout=300s -n kafka

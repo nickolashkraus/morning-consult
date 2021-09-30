@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# USAGE
+#
+#   run <command> [-t, --topic <topic>]
+#
+# EXAMPLE
+#
+#   run producer -t example
+#   run consumer --topic example
+#
+# DESCRIPTION
+#
+#   Run a Kafka producer or consumer with a given topic.
+
+function usage {
+  echo 'usage: run <command> [-t, --topic <topic>]'
+}
+
+if [ -z "${1}" ] || [ "${1}" != 'producer' -a "${1}" != 'consumer' ]; then
+  echo -en "\033[0;31m"
+  echo "Specify a valid command (producer or consumer)."
+  echo -en "\033[0m\n"
+  usage
+  exit 1
+fi
+
+if [ -z "${2}" ] || [ "${2}" != '-t' -a "${2}" != '--topic' ]; then
+  echo -en "\033[0;31m"
+  echo "Specify a valid option (-t or --topic)."
+  echo -en "\033[0m\n"
+  usage
+  exit 1
+fi
+
+if [ -z "${3}" ]; then
+  echo -en "\033[0;31m"
+  echo "Specify a topic."
+  echo -en "\033[0m\n"
+  usage
+  exit 1
+fi
+
+if [ "${1}" == 'producer' ]; then
+  kubectl -n kafka run kafka-producer \
+    -ti --image='quay.io/strimzi/kafka:0.25.0-kafka-2.8.0' \
+    --rm=true --restart=Never -- bin/kafka-console-producer.sh \
+    --broker-list my-cluster-kafka-bootstrap:9092 --topic "${3}"
+else
+  kubectl -n kafka run kafka-consumer \
+    -ti --image='quay.io/strimzi/kafka:0.25.0-kafka-2.8.0' \
+    --rm=true --restart=Never -- bin/kafka-console-consumer.sh \
+    --bootstrap-server my-cluster-kafka-bootstrap:9092 \
+    --topic "${3}" --from-beginning
+fi

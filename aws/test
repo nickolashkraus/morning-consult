@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# USAGE
+#
+#   test <data>
+#
+# EXAMPLE
+#
+#   test 'Hello, World!'
+#
+# DESCRIPTION
+#
+#   Test Amazon Kinesis -> AWS Lambda.
+
+if [ -z "${1}" ]; then
+  echo -en "\033[0;31m"
+  echo "Specify data."
+  echo -en "\033[0m\n"
+  usage
+  exit 1
+fi
+
+aws kinesis put-record \
+  --stream-name morning-consult-kinesis-stream \
+  --partition-key 1 \
+  --data "${1}"
