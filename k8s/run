@@ -51,5 +51,5 @@ else
     -ti --image='quay.io/strimzi/kafka:0.25.0-kafka-2.8.0' \
     --rm=true --restart=Never -- bin/kafka-console-consumer.sh \
     --bootstrap-server my-cluster-kafka-bootstrap:9092 \
-    --topic "${3}" --from-beginning
+    --topic "${3}"
 fi
