@@ -1,6 +1,6 @@
-# Morning Consult
+# [Morning Consult](https://morningconsult.com)
 
-[![MIT License](https://img.shields.io/github/license/NickolasHKraus/morning-consult?color=blue)](https://github.com/NickolasHKraus/morning-consult/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/NickolasHKraus/morning-consult/blob/master/LICENSE)
 
 Solution for a technical interview problem.
 
@@ -8,7 +8,7 @@ Solution for a technical interview problem.
 
 ## Prompt
 
-> You have a Twitter Firehose that is constantly pushing you data. You need to deploy a service that ingests that data and writes it to a backend data store for downstream application consumption.
+>You have a Twitter Firehose that is constantly pushing you data. You need to deploy a service that ingests that data and writes it to a backend data store for downstream application consumption.
 
 ## Overview
 
