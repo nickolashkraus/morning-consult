@@ -2,7 +2,7 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/NickolasHKraus/morning-consult/blob/master/LICENSE)
 
-Solution for a technical interview problem.
+Solution for the technical interview problem
 
 [Google Slides](https://docs.google.com/presentation/d/1YTHk83fRqV9TUDvS1VarhDV4agciidF0nnBxhAJO5rI)
 
