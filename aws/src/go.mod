@@ -1,4 +1,4 @@
-module github.com/NickolasHKraus/morning-consult/aws/src
+module github.com/nickolashkraus/morning-consult/aws/src
 
 go 1.17
 

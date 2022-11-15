@@ -1,6 +1,6 @@
 # [Morning Consult](https://morningconsult.com)
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/NickolasHKraus/morning-consult/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/nickolashkraus/morning-consult/blob/master/LICENSE)
 
 Solution for the technical interview problem
 
