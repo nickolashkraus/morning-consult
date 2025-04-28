@@ -1,10 +1,15 @@
 # [Morning Consult](https://morningconsult.com)
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/nickolashkraus/morning-consult/blob/master/LICENSE)
+* **Date**: October 1st, 2021
+* **Format**: Technical Interview
 
-Solution for the technical interview problem
+Solution for the technical interview
 
-[Google Slides](https://docs.google.com/presentation/d/1YTHk83fRqV9TUDvS1VarhDV4agciidF0nnBxhAJO5rI)
+---
+
+## Presentation
+
+* [Google Slides](https://docs.google.com/presentation/d/1YTHk83fRqV9TUDvS1VarhDV4agciidF0nnBxhAJO5rI)
 
 ## Prompt
 
